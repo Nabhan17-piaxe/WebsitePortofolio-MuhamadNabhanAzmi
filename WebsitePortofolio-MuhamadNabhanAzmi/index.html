@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Muhamad Nabhan Azmi — Electrical Engineering, IoT & Intelligent Control Portfolio</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body id="top">
+
+  <!-- Clean, Compact Sticky Navigation Header -->
+  <header class="sticky-header sticky top-0 z-40 pt-3 sm:pt-4 px-3 sm:px-6">
+    <div class="navbar-pill w-full max-w-[1440px] 2xl:max-w-[1600px] mx-auto px-4 sm:px-8 lg:px-12 h-14 sm:h-16 rounded-full flex items-center justify-between gap-4">
+      <!-- Left Brand Title -->
+      <div class="flex items-center">
+        <a href="#top" class="text-base sm:text-[19px] font-extrabold tracking-tight whitespace-nowrap" style="color: var(--ink); text-decoration: none;">
+          <span>Nabhan's Portfolio</span>
+        </a>
+      </div>
+
+      <!-- Right Navigation Links + Circular Theme Button -->
+      <div class="flex items-center gap-4 lg:gap-6">
+        <nav id="desktop-nav" class="hidden md:flex items-center gap-3.5 lg:gap-5 text-[12px] lg:text-[13px] font-semibold tracking-tight whitespace-nowrap">
+          <a href="#top" data-nav-target="top" class="nav-link-active" data-i18n="nav_home">Home</a>
+          <a href="#about-me" data-nav-target="about-me" class="nav-link" data-i18n="nav_about">About</a>
+          <a href="#projects" data-nav-target="projects" class="nav-link" data-i18n="nav_projects">Projects</a>
+          <a href="#experience" data-nav-target="experience" class="nav-link" data-i18n="nav_experience">Experience</a>
+          <a href="#speaking-volunteers" data-nav-target="speaking-volunteers" class="nav-link" data-i18n="nav_speaking">Gallery</a>
+          <a href="#skills" data-nav-target="skills" class="nav-link" data-i18n="nav_skills">Skills</a>
+          <a href="#credentials" data-nav-target="credentials" class="nav-link" data-i18n="nav_credentials">Achievements</a>
+          <a href="#contact" data-nav-target="contact" class="nav-link" data-i18n="nav_contact">Contact</a>
+        </nav>
+
+        <div class="flex items-center gap-2">
+          <button id="lang-toggle-btn" type="button" class="lang-btn-pill px-2.5 py-1 rounded-full text-[11px] font-bold tracking-wider" title="Switch Language (ID / EN)">
+            <span id="lang-ind-id" style="color: var(--blue);">ID</span>
+            <span style="color: var(--line);">|</span>
+            <span id="lang-ind-en" style="color: var(--muted);">EN</span>
+          </button>
+
+          <!-- Circular Theme Button with adaptive Dark/Light Mode styling -->
+          <button id="theme-toggle-btn" type="button" class="theme-btn-circle w-9 h-9 sm:w-10 sm:h-10 rounded-full flex items-center justify-center hover:scale-105 shadow-sm" aria-label="Toggle theme" title="Mode Terang / Gelap">
+            <span id="theme-icon" class="hidden">🌙</span>
+            <svg class="w-4 h-4 sm:w-[18px] sm:h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="4"/>
+              <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+            </svg>
+          </button>
+
+          <button id="mobile-menu-btn" type="button" class="lang-btn-pill md:hidden w-9 h-9 rounded-full flex items-center justify-center" aria-label="Buka menu navigasi">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu-drawer" class="hidden md:hidden w-full max-w-[1440px] 2xl:max-w-[1600px] mx-auto mt-2 rounded-3xl border px-6 py-4 space-y-2 shadow-xl pointer-events-auto" style="border-color: var(--line); background: var(--paper);">
+      <div class="flex flex-col space-y-2 text-xs font-semibold">
+        <a href="#top" class="mobile-nav-link py-1 font-bold" style="color: var(--ink);" data-i18n="nav_home">Home</a>
+        <a href="#about-me" class="mobile-nav-link py-1" data-i18n="nav_about">About</a>
+        <a href="#projects" class="mobile-nav-link py-1" data-i18n="nav_projects">Projects</a>
+        <a href="#experience" class="mobile-nav-link py-1" data-i18n="nav_experience">Experience</a>
+        <a href="#speaking-volunteers" class="mobile-nav-link py-1" data-i18n="nav_speaking">Gallery</a>
+        <a href="#skills" class="mobile-nav-link py-1" data-i18n="nav_skills">Skills</a>
+        <a href="#credentials" class="mobile-nav-link py-1" data-i18n="nav_credentials">Achievements</a>
+        <a href="#contact" class="mobile-nav-link py-1" data-i18n="nav_contact">Contact</a>
+        <div class="pt-2 border-t" style="border-color: var(--line);">
+          <button id="open-cv-header-btn" type="button" class="pill-btn-primary w-full justify-center !py-1.5 !px-3.5 !text-[11px]">
+            <span data-i18n="btn_view_cv">Lihat CV</span>
+            <span>↗</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="w-full max-w-[1440px] 2xl:max-w-[1600px] mx-auto px-4 sm:px-8 lg:px-12 pt-4 pb-14 space-y-16">
+
+    <!-- ===================================================================== -->
+    <!-- SLIDE 1: HERO / OPENING SECTION (#about) — Fits 1 Desktop Screen      -->
+    <!-- ===================================================================== -->
+    <section id="about" class="pt-0">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-stretch">
+
+        <!-- Left Column (7 cols): Compact Title, Subtitle, 01/02/03 Focus, CTAs, and GPA/Leadership/Credential Row -->
+        <div class="md:col-span-7 lg:col-span-7 flex flex-col justify-between space-y-3.5">
+          <div class="space-y-2.5">
+            <div class="inline-flex items-center px-3 py-1 rounded-full text-[11px] font-bold tracking-wider uppercase" style="background: var(--blue-soft); color: var(--blue);">
+              <span data-i18n="hero_badge">ELECTRICAL ENGINEERING · UPNVJ</span>
+            </div>
+
+            <h1 class="text-3xl sm:text-4xl lg:text-[42px] font-extrabold tracking-tight leading-[1.06]" style="color: var(--ink);">
+              Muhamad Nabhan Azmi
+            </h1>
+
+            <!-- Subtitle + Typed Specialty -->
+            <div class="space-y-0.5">
+              <p class="text-base sm:text-lg lg:text-xl font-semibold tracking-tight" style="color: var(--secondary);" data-i18n="hero_subtitle">
+                Internet of Things, Robotika &amp; Intelligent Control System.
+              </p>
+              <div class="text-xs sm:text-sm font-semibold flex items-center gap-1.5" style="color: var(--blue);">
+                <span data-i18n="hero_focus_prefix">Fokus Keahlian:</span>
+                <span id="typed-specialty" class="font-bold">Internet of Things (IoT)</span><span class="typing-cursor"></span>
+              </div>
+            </div>
+
+            <!-- Compact 01, 02, 03 Focus Points -->
+            <div class="apple-card p-3.5 sm:p-4 space-y-2">
+              <div class="flex items-start gap-2.5">
+                <span class="w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-extrabold shrink-0 mt-0.5" style="background: var(--blue-soft); color: var(--blue);">01</span>
+                <div>
+                  <div class="text-xs sm:text-sm font-bold leading-snug" style="color: var(--ink);" data-i18n="focus_1_title">Internet of Things (IoT) &amp; Intelligent System</div>
+                  <div class="text-[11.5px] leading-snug" style="color: var(--secondary);" data-i18n="focus_1_desc">Riset teknologi tepat guna, Smart Hybrid Drying Dome (Top 1 SDGs), dan Intelligent Control System Research Team.</div>
+                </div>
+              </div>
+              <div class="border-t pt-2 flex items-start gap-2.5" style="border-color: var(--line);">
+                <span class="w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-extrabold shrink-0 mt-0.5" style="background: var(--blue-soft); color: var(--blue);">02</span>
+                <div>
+                  <div class="text-xs sm:text-sm font-bold leading-snug" style="color: var(--ink);" data-i18n="focus_2_title">Robotics, 3D CAD &amp; PCB Fabrication</div>
+                  <div class="text-[11.5px] leading-snug" style="color: var(--secondary);" data-i18n="focus_2_desc">Pengembangan Robot Sumo ESP, Robot Transporter nirkabel, Omni-Wheel AGV, desain 3D Fusion 360, serta desain &amp; etching PCB.</div>
+                </div>
+              </div>
+              <div class="border-t pt-2 flex items-start gap-2.5" style="border-color: var(--line);">
+                <span class="w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-extrabold shrink-0 mt-0.5" style="background: var(--blue-soft); color: var(--blue);">03</span>
+                <div>
+                  <div class="text-xs sm:text-sm font-bold leading-snug" style="color: var(--ink);" data-i18n="focus_3_title">Tech Leadership, Educator &amp; Public Speaking</div>
+                  <div class="text-[11.5px] leading-snug" style="color: var(--secondary);" data-i18n="focus_3_desc">Head of HRD KSM IoT, Google Student Ambassador 2026, Asisten Lab, serta Pembicara &amp; MC acara teknik.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Direct Action Buttons -->
+          <div class="flex flex-wrap items-center gap-2">
+            <a href="#projects" class="pill-btn-primary !py-2 !px-4 !text-xs sm:!text-sm">
+              <span data-i18n="cta_projects">Lihat Proyek</span>
+              <span>↓</span>
+            </a>
+            <button id="open-cv-hero-btn" type="button" class="pill-btn-secondary !py-2 !px-4 !text-xs sm:!text-sm">
+              <span data-i18n="cta_cv">Buka Dokumen CV</span>
+              <span>↗</span>
+            </button>
+            <a href="#contact" class="pill-btn-secondary !py-2 !px-4 !text-xs sm:!text-sm">
+              <span data-i18n="cta_connect">Mari Terhubung</span>
+            </a>
+            <button id="copy-email-hero-btn" type="button" class="pill-btn-secondary !py-2 !px-3.5 !text-xs" title="Salin alamat email">
+              <span>📋</span>
+              <span data-i18n="btn_copy_email">Salin Email</span>
+            </button>
+          </div>
+
+          <!-- GPA (3.49/4.00), Leadership, Credential Row — Visible Above the Fold on Desktop -->
+          <div class="grid grid-cols-3 gap-2.5 sm:gap-3">
+            <div class="apple-card p-3 sm:p-3.5">
+              <div class="text-[10px] sm:text-xs font-semibold uppercase tracking-wider" style="color: var(--muted);" data-i18n="stat_gpa_label">GPA / IPK</div>
+              <div class="text-lg sm:text-xl font-extrabold mt-0.5" style="color: var(--ink);">3.49 <span class="text-xs font-medium" style="color: var(--muted);">/ 4.00</span></div>
+              <div class="text-[11px] mt-0.5 leading-tight" style="color: var(--secondary);" data-i18n="stat_gpa_sub">S-1 Teknik Elektro UPNVJ</div>
+            </div>
+            <div class="apple-card p-3 sm:p-3.5">
+              <div class="text-[10px] sm:text-xs font-semibold uppercase tracking-wider" style="color: var(--muted);" data-i18n="stat_lead_label">Leadership</div>
+              <div class="text-xs sm:text-sm font-extrabold mt-0.5 leading-snug" style="color: var(--ink);" data-i18n="stat_lead_val">Head of HRD, KSM IoT</div>
+              <div class="text-[11px] mt-0.5 leading-tight" style="color: var(--secondary);" data-i18n="stat_lead_sub">&amp; Intelligent Control Team</div>
+            </div>
+            <div class="apple-card p-3 sm:p-3.5">
+              <div class="text-[10px] sm:text-xs font-semibold uppercase tracking-wider" style="color: var(--muted);" data-i18n="stat_impact_label">Credential</div>
+              <div class="text-xs sm:text-sm font-extrabold mt-0.5 leading-snug" style="color: var(--ink);" data-i18n="stat_impact_val">Lab Assistant</div>
+              <div class="text-[11px] mt-0.5 leading-tight" style="color: var(--secondary);" data-i18n="stat_impact_sub">Teknik Elektro UPNVJ (&gt;100 Mhs)</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column (5 cols): Box Fitted Tightly to Photo + Subtitle & Location Directly on Photo -->
+        <div class="md:col-span-5 lg:col-span-5 flex">
+          <div class="marsel-portrait-card w-full h-full max-h-[520px] flex items-center justify-center">
+            <!-- Full-bleed fitted portrait photo -->
+            <img
+              id="hero-profile-img"
+              src="assets/opt_hrd_crop.jpg"
+              alt="Muhamad Nabhan Azmi — Head of HRD KSM IoT"
+              class="marsel-cutout-img"
+            />
+
+            <!-- Subtle bottom gradient fade so bottom text & address sit cleanly on the photo -->
+            <div class="marsel-photo-fade"></div>
+
+            <!-- Top-left & Top-right Floating Pills Directly on Photo -->
+            <div class="absolute top-3.5 left-3.5 right-3.5 z-20 flex items-center justify-between gap-2">
+
+              <button id="switch-photo-btn" type="button" class="hidden" aria-hidden="true">
+                <span data-i18n="btn_switch_photo">Ganti Foto ↻</span>
+              </button>
+            </div>
+
+            <!-- Bottom Overlay Directly on Photo: Subtitle on Left + Location Pin on Right -->
+            <div class="absolute bottom-3.5 left-4 right-4 z-20 flex items-end justify-between gap-3 flex-wrap">
+              <div class="text-xs sm:text-sm font-semibold tracking-tight" style="color: var(--ink);" data-i18n="hero_card_sub">
+                Engineering &amp; leadership with purpose.
+              </div>
+              <div class="inline-flex items-center gap-1 text-xs sm:text-sm font-medium shrink-0" style="color: var(--secondary);">
+                <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                </svg>
+                <span>DKI Jakarta, Indonesia</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- SLIDE 2: ABOUT ME SECTION (#about-me) — Nada Style with MC Photo      -->
+    <!-- ===================================================================== -->
+    <section id="about-me" class="apple-card p-7 sm:p-11">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 items-center">
+
+        <!-- Left Column (8 cols): ABOUT ME heading, 2 paragraphs, 10 Icons (Wokwi & Leadership removed), 3 Columns -->
+        <div class="md:col-span-8 lg:col-span-8 space-y-6">
+          <h2 class="text-4xl sm:text-5xl font-black tracking-tight uppercase" style="color: var(--ink);" data-i18n="nada_about_heading">
+            ABOUT ME
+          </h2>
+
+          <div class="space-y-4 text-sm sm:text-base leading-relaxed" style="color: var(--secondary);">
+            <p data-i18n="nada_about_p1">
+              Saya adalah mahasiswa S-1 Teknik Elektro di Universitas Pembangunan Nasional "Veteran" Jakarta dengan minat kuat pada solusi berbasis teknologi tepat guna, Internet of Things (IoT), robotika, Intelligent Control System, riset inovasi, dan komunikasi publik.
+            </p>
+            <p data-i18n="nada_about_p2">
+              Saat ini menjabat sebagai Head of Department Human Resource Development (HRD) di KSM Internet of Things UPNVJ, anggota Intelligent Control System Research Team, serta Asisten Laboratorium Teknik Elektro. Saya berpengalaman dalam perancangan 3D (Fusion 360), desain &amp; etching PCB, penulisan esai ilmiah kompetitif, serta memandu acara akademik sebagai Pembicara, Moderator, dan Master of Ceremonies (MC).
+            </p>
+          </div>
+
+          <!-- Floating Software & Engineering Icons Row (Wokwi & Leadership removed as requested) -->
+          <div id="skills-json-grid" class="flex flex-wrap items-center gap-3.5 pt-1"></div>
+
+          <!-- 3-Column Bottom Feature Strip -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-3">
+            <div class="border-t pt-5 space-y-2" style="border-color: var(--line);">
+              <div style="color: var(--ink);">
+                <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4.9 19.1C1 15.2 1 8.8 4.9 4.9"></path>
+                  <path d="M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5"></path>
+                  <circle cx="12" cy="12" r="2"></circle>
+                  <path d="M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5"></path>
+                  <path d="M19.1 4.9C23 8.8 23 15.1 19.1 19"></path>
+                  <line x1="12" y1="14" x2="12" y2="21"></line>
+                </svg>
+              </div>
+              <div class="text-sm font-black uppercase tracking-wide" style="color: var(--ink);" data-i18n="nada_col1_title">
+                ELECTRICAL &amp; ROBOTICS
+              </div>
+              <div class="text-xs font-medium" style="color: var(--muted);" data-i18n="nada_col1_sub">
+                Engineering Field
+              </div>
+            </div>
+
+            <div class="border-t pt-5 space-y-2" style="border-color: var(--line);">
+              <div style="color: var(--ink);">
+                <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect>
+                  <rect x="9" y="9" width="6" height="6"></rect>
+                  <line x1="9" y1="1" x2="9" y2="4"></line>
+                  <line x1="15" y1="1" x2="15" y2="4"></line>
+                  <line x1="9" y1="20" x2="9" y2="23"></line>
+                  <line x1="15" y1="20" x2="15" y2="23"></line>
+                  <line x1="20" y1="9" x2="23" y2="9"></line>
+                  <line x1="20" y1="14" x2="23" y2="14"></line>
+                  <line x1="1" y1="9" x2="4" y2="9"></line>
+                  <line x1="1" y1="14" x2="4" y2="14"></line>
+                </svg>
+              </div>
+              <div class="text-sm font-black uppercase tracking-wide" style="color: var(--ink);" data-i18n="nada_col2_title">
+                IOT &amp; INTELLIGENT CONTROL
+              </div>
+              <div class="text-xs font-medium" style="color: var(--muted);" data-i18n="nada_col2_sub">
+                Focus Area
+              </div>
+            </div>
+
+            <div class="border-t pt-5 space-y-2" style="border-color: var(--line);">
+              <div style="color: var(--ink);">
+                <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+              </div>
+              <div class="text-sm font-black uppercase tracking-wide" style="color: var(--ink);" data-i18n="nada_col3_title">
+                HRD &amp; GSA LEADERSHIP
+              </div>
+              <div class="text-xs font-medium" style="color: var(--muted);" data-i18n="nada_col3_sub">
+                Leadership Role
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column (4 cols): Updated to MC Photo (Foto-Nabhan-MC.jpeg) as requested -->
+        <div class="md:col-span-4 lg:col-span-4 flex justify-center">
+          <div class="w-full max-w-[330px] aspect-[3/4] rounded-[28px] overflow-hidden border shadow-md relative" style="border-color: var(--line); background: var(--canvas);">
+            <img
+              id="about-me-photo"
+              src="assets/about_nabhan_mc.jpg"
+              alt="Muhamad Nabhan Azmi — Master of Ceremonies"
+              class="w-full h-full object-cover object-center"
+            />
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- SLIDE 3: 01 / FEATURED PROJECTS (#projects) — Compact & Clean         -->
+    <!-- ===================================================================== -->
+    <section id="projects" class="space-y-5">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-3">
+        <div>
+          <div class="section-index">01 / FEATURED PROJECTS</div>
+          <h2 class="text-2xl sm:text-[26px] font-extrabold tracking-tight mt-0.5" style="color: var(--ink);" data-i18n="sec_projects_title">
+            Featured Engineering, Robotics &amp; Intelligent Control Projects
+          </h2>
+          <p class="text-xs sm:text-[13px] mt-0.5 max-w-2xl" style="color: var(--secondary);" data-i18n="sec_projects_sub">
+            Proyek sistem kendali cerdas, ekosistem IoT &amp; Edge AI, robotika AGV/Sumo/Transporter, desain PCB, serta riset teknologi tepat guna.
+          </p>
+        </div>
+
+        <!-- Carousel & Grid Controls -->
+        <div class="flex items-center gap-1.5 self-start md:self-auto">
+          <span id="carousel-counter" class="text-[11px] font-mono font-bold px-2.5 py-1 rounded-full border" style="border-color: var(--line); background: var(--paper); color: var(--secondary);">01 / 10</span>
+          <button id="carousel-prev-btn" type="button" class="pill-btn-secondary !py-1 !px-2.5 !text-xs" title="Proyek Sebelumnya" aria-label="Previous project">←</button>
+          <button id="carousel-play-btn" type="button" class="pill-btn-secondary !px-2.5 !py-1 !text-[11px] font-bold" title="Putar / Jeda Otomatis">
+            <span id="carousel-play-icon">⏸</span>
+            <span id="carousel-play-label" data-i18n="btn_auto">Auto</span>
+          </button>
+          <button id="carousel-next-btn" type="button" class="pill-btn-secondary !py-1 !px-2.5 !text-xs" title="Proyek Berikutnya" aria-label="Next project">→</button>
+          <button id="toggle-grid-view-btn" type="button" class="pill-btn-secondary !px-3 !py-1 !text-[11px] font-bold" title="Ganti tampilan Carousel / Semua Grid">
+            <span id="view-mode-label" data-i18n="btn_view_grid">Tampilan Grid</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="flex items-center gap-1.5 overflow-x-auto pb-1" id="project-filter-bar">
+        <button type="button" class="filter-tab active" data-filter="all" data-category="all" data-i18n="filter_all">Semua Proyek (9)</button>
+        <button type="button" class="filter-tab" data-filter="iot" data-category="iot" data-i18n="filter_iot">Embedded &amp; Smart IoT</button>
+        <button type="button" class="filter-tab" data-filter="hardware" data-category="hardware" data-i18n="filter_hardware">Robotika &amp; Desain PCB</button>
+        <button type="button" class="filter-tab" data-filter="ai" data-category="ai" data-i18n="filter_ai">AI, Fuzzy &amp; DSP</button>
+        <button type="button" class="filter-tab" data-filter="impact" data-category="impact" data-i18n="filter_impact">Pemberdayaan &amp; Edukasi</button>
+      </div>
+
+      <!-- Projects Carousel / Grid Container -->
+      <div id="projects-container" class="carousel-track"></div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- SLIDE 4: 02 / EXPERIENCE & EDUCATION (#experience) — Clean & Balanced -->
+    <!-- ===================================================================== -->
+    <section id="experience" class="space-y-5">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3">
+        <div>
+          <div class="section-index">02 / EXPERIENCE</div>
+          <h2 class="text-2xl sm:text-[26px] font-extrabold tracking-tight mt-0.5" style="color: var(--ink);" data-i18n="sec_exp_title">
+            Pengalaman Riset, Organisasi &amp; Akademik
+          </h2>
+          <p class="text-xs sm:text-[13px] mt-0.5 max-w-2xl" style="color: var(--secondary);" data-i18n="sec_exp_sub">
+            Rekam jejak di Intelligent Control System Research Team, KSM IoT UPNVJ, Google Indonesia, serta asistensi pengajaran di Laboratorium Teknik Elektro.
+          </p>
+        </div>
+
+        <!-- Experience Category Filter -->
+        <div class="flex items-center gap-1.5 flex-wrap" id="exp-filter-bar">
+          <button type="button" class="filter-tab active" data-exp-filter="all" data-i18n="exp_filter_all">Semua Peran</button>
+          <button type="button" class="filter-tab" data-exp-filter="tech" data-i18n="exp_filter_tech">Teknologi &amp; Akademik</button>
+          <button type="button" class="filter-tab" data-exp-filter="leadership" data-i18n="exp_filter_lead">Kepemimpinan &amp; Event</button>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-5 items-start">
+        <!-- Experience Timeline Column (8 cols) — Top-to-bottom CV timeline with connecting line -->
+        <div class="md:col-span-8 lg:col-span-8">
+          <div id="experience-timeline-list" class="cv-timeline space-y-3"></div>
+        </div>
+
+        <!-- Education & CV Column (4 cols) -->
+        <div class="md:col-span-4 lg:col-span-4 space-y-3.5">
+          <div class="apple-card p-5 space-y-3.5">
+            <div class="flex items-center justify-between">
+              <span class="tag-pill !text-[10px] !py-0.5 !px-2.5" data-i18n="edu_badge">PENDIDIKAN FORMAL</span>
+              <span class="text-[11px] font-mono font-semibold" style="color: var(--muted);">2024 – Sekarang</span>
+            </div>
+
+            <div class="space-y-2.5 pb-3.5 border-b" style="border-color: var(--line);">
+              <div class="flex items-center gap-3">
+                <img
+                  id="upnvj-logo-img"
+                  src="assets/upnvj_campus.jpg"
+                  alt="UPN Veteran Jakarta"
+                  class="w-12 h-12 rounded-xl object-contain bg-white p-0.5 border shrink-0"
+                  style="border-color: var(--line);"
+                />
+                <div>
+                  <div class="text-[10px] font-bold uppercase tracking-wider" style="color: var(--blue);">2024 – Sekarang | Mahasiswa Aktif</div>
+                  <h3 class="text-xs sm:text-sm font-extrabold leading-snug" style="color: var(--ink);">Universitas Pembangunan Nasional "Veteran" Jakarta</h3>
+                  <p class="text-[11px] font-semibold" style="color: var(--secondary);" data-i18n="edu_upnvj_deg">S-1 Teknik Elektro (Electrical Engineering)</p>
+                </div>
+              </div>
+
+              <div class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full text-[11px] font-bold" style="background: var(--canvas); color: var(--ink); border: 1px solid var(--line);">
+                <span>GPA / IPK: 3.49 / 4.00</span>
+              </div>
+
+              <blockquote class="p-2.5 rounded-xl text-[11px] italic border-l-2" style="background: var(--canvas); border-color: var(--blue); color: var(--secondary);" data-i18n="edu_quote">
+                "Pendidikan bukan sekadar mempelajari fakta, tetapi melatih pikiran untuk berpikir."
+              </blockquote>
+
+              <p class="text-[11px] leading-relaxed" style="color: var(--secondary);" data-i18n="edu_upnvj_notes">
+                Fokus studi: Internet of Things (IoT), Robotika, Intelligent Control System, Pengukuran Besaran Listrik, dan Sistem Digital.
+              </p>
+            </div>
+
+            <div class="space-y-1">
+              <div class="text-[10px] font-bold uppercase tracking-wider" style="color: var(--muted);">2021 – 2024</div>
+              <h4 class="text-xs font-bold" style="color: var(--ink);">SMA Islam As-Syafi'iyah 02 Bekasi</h4>
+              <p class="text-[11px] font-semibold" style="color: var(--secondary);" data-i18n="edu_sma_deg">Matematika dan Ilmu Pengetahuan Alam (MIPA)</p>
+              <p class="text-[11px] leading-snug" style="color: var(--muted);" data-i18n="edu_sma_notes">
+                Ketua Paskibra (2022–2023) &amp; Ketua Badan Pengawas Organisasi (2023–2024).
+              </p>
+            </div>
+          </div>
+
+          <!-- Compact CV Download & Print Card -->
+          <div class="apple-card p-4 space-y-2.5" style="background: var(--blue-soft); border-color: rgba(0, 104, 217, 0.2);">
+            <div class="text-[10px] font-extrabold uppercase tracking-wider" style="color: var(--blue);" data-i18n="arch_card_badge">DOKUMEN CV &amp; RESUME</div>
+            <h3 class="text-xs sm:text-sm font-bold" style="color: var(--ink);" data-i18n="arch_card_title">CV Interaktif (ID / EN) &amp; Google Drive</h3>
+            <p class="text-[11px] leading-snug" style="color: var(--secondary);" data-i18n="arch_card_desc">
+              Cetak CV dwibahasa langsung dari halaman ini atau buka dokumen Resume PDF di Google Drive.
+            </p>
+            <div class="flex flex-col gap-2 pt-0.5">
+              <button id="open-cv-side-btn" type="button" class="pill-btn-primary !w-full justify-center !py-2 !text-xs">
+                <span data-i18n="btn_open_printable_cv">Buka Dokumen CV</span>
+                <span>↗</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- SLIDE 5: 03 / PUBLIC SPEAKING AND VOLUNTEERS (#speaking-volunteers)   -->
+    <!-- ===================================================================== -->
+    <section id="speaking-volunteers" class="space-y-5">
+      <div>
+        <div class="section-index">03 / PUBLIC SPEAKING AND VOLUNTEERS</div>
+        <h2 class="text-2xl sm:text-[26px] font-extrabold tracking-tight mt-0.5" style="color: var(--ink);" data-i18n="sec_speak_title">
+          Public Speaking, Master of Ceremonies &amp; Volunteer Operations
+        </h2>
+        <p class="text-xs sm:text-[13px] mt-0.5 max-w-2xl" style="color: var(--secondary);" data-i18n="sec_speak_sub">
+          Setiap peran Pembicara IoT, Moderator, Master of Ceremonies (MC), dan Volunteer Operasional ditampilkan secara terpisah berdasarkan masing-masing acara.
+        </p>
+      </div>
+
+      <div id="speaking-volunteers-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"></div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- SLIDE 6: 04 / CONNECTED CAPABILITIES (#skills) — Sleek 3 Columns      -->
+    <!-- ===================================================================== -->
+    <section id="skills" class="space-y-5">
+      <div>
+        <div class="section-index">04 / CONNECTED CAPABILITIES</div>
+        <h2 class="text-2xl sm:text-[26px] font-extrabold tracking-tight mt-0.5" style="color: var(--ink);" data-i18n="sec_skills_title">
+          Disiplin Teknis &amp; Kapabilitas Terhubung
+        </h2>
+        <p class="text-xs sm:text-[13px] mt-0.5 max-w-2xl" style="color: var(--secondary);" data-i18n="sec_skills_sub">
+          Tiga pilar kapabilitas utama yang menghubungkan sistem tertanam &amp; kendali cerdas (IoT &amp; Intelligent Control), fabrikasi perangkat keras (3D CAD &amp; PCB), dan kepemimpinan organisasi.
+        </p>
+      </div>
+
+      <!-- Galeri Sertifikat Resmi (9 Dokumen Sertifikat Atas Nama Muhamad Nabhan Azmi dari Google Drive) -->
+      <div class="space-y-3">
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <span class="tag-pill !text-[10.5px] !py-1 !px-3" data-i18n="cert_gallery_badge">DOKUMEN SERTIFIKAT RESMI · MUHAMAD NABHAN AZMI (9 SERTIFIKAT TERVERIFIKASI)</span>
+          <span class="text-[11px] font-medium" style="color: var(--muted);" data-i18n="cert_gallery_hint">Klik kartu untuk memperbesar sertifikat atau membuka dokumen asli di Google Drive</span>
+        </div>
+        <div id="certificates-gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5"></div>
+        <div class="flex justify-center pt-1">
+          <button id="toggle-certs-more-btn" type="button" class="pill-btn-secondary !py-2 !px-5 !text-xs font-bold">
+            <span id="toggle-certs-more-label">Lihat Lebih Banyak (6 Sertifikat Lainnya) ↓</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5">
+        <!-- Discipline 1 -->
+        <div class="apple-card p-5 flex flex-col justify-between space-y-4">
+          <div class="space-y-2">
+            <div class="w-9 h-9 rounded-xl flex items-center justify-center text-base font-bold" style="background: var(--blue-soft); color: var(--blue);">⚡</div>
+            <h3 class="text-base font-bold" style="color: var(--ink);" data-i18n="skill_col1_title">IoT, Intelligent Control &amp; Robotics</h3>
+            <p class="text-xs leading-relaxed" style="color: var(--secondary);" data-i18n="skill_col1_desc">
+              Pengembangan sistem mikrokontroler ESP &amp; Arduino, algoritma kendali Logika Fuzzy &amp; Dynamic Programming, navigasi AGV Omni-Wheel, serta integrasi sensor-aktuator dan Edge AI.
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-1.5 pt-1">
+            <span class="tag-pill !text-[10.5px] !py-0.5 !px-2.5">Arduino &amp; ESP32</span>
+            <span class="tag-pill !text-[10.5px] !py-0.5 !px-2.5">C / C++ &amp; Python</span>
+            <span class="tag-pill !text-[10.5px] !py-0.5 !px-2.5">Fuzzy Logic &amp; Rule-Based</span>
+            <span class="tag-pill !text-[10.5px] !py-0.5 !px-2.5">Dynamic Programming AGV</span>
+            <span class="tag-pill !text-[10.5px] !py-0.5 !px-2.5">Edge Computer Vision</span>
+            <span class="tag-pill !text-[10.5px] !py-0.5 !px-2.5">Blynk &amp; IoT Telemetry</span>
+          </div>
+        </div>
+
+        <!-- Discipline 2 -->
+        <div class="apple-card p-5 flex flex-col justify-between space-y-4">
+          <div class="space-y-2">
+            <div class="w-9 h-9 rounded-xl flex items-center justify-center text-base font-bold" style="background: var(--blue-soft); color: var(--blue);">🛠️</div>
+            <h3 class="text-base font-bold" style="color: var(--ink);" data-i18n="skill_col2_title">Hardware Prototyping, 3D CAD &amp; PCB</h3>
+            <p class="text-xs leading-relaxed" style="color: var(--secondary);" data-i18n="skill_col2_desc">
+              Perancangan mekanik 3D dan pencetakan 3D (Fusion 360 &amp; Ultimaker Cura), desain skematik &amp; simulasi rangkaian (Proteus &amp; EasyEDA), hingga fabrikasi/etching fisik Printed Circuit Board (PCB).
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-1.5 pt-1">
+            <span class="tag-pill !text-[10.5px] !py-0.5 !px-2.5">Fusion 360 (3D CAD)</span>
+            <span class="tag-pill !text-[10.5px] !py-0.5 !px-2.5">Ultimaker Cura (3D Print)</span>
+            <span class="tag-pill !text-[10.5px] !py-0.5 !px-2.5">EasyEDA &amp; KiCad</span>
+            <span class="tag-pill !text-[10.5px] !py-0.5 !px-2.5">Proteus Design Suite</span>
+            <span class="tag-pill !text-[10.5px] !py-0.5 !px-2.5">PCB Etching &amp; Soldering</span>
+            <span class="tag-pill !text-[10.5px] !py-0.5 !px-2.5">Hardware Troubleshooting</span>
+          </div>
+        </div>
+
+        <!-- Discipline 3 -->
+        <div class="apple-card p-5 flex flex-col justify-between space-y-4">
+          <div class="space-y-2">
+            <div class="w-9 h-9 rounded-xl flex items-center justify-center text-base font-bold" style="background: var(--blue-soft); color: var(--blue);">🎙️</div>
+            <h3 class="text-base font-bold" style="color: var(--ink);" data-i18n="skill_col3_title">Tech Leadership, Education &amp; Operations</h3>
+            <p class="text-xs leading-relaxed" style="color: var(--secondary);" data-i18n="skill_col3_desc">
+              Kepemimpinan SDM &amp; kurikulum Design Thinking di KSM IoT, asistensi laboratorium Teknik Elektro (&gt;100 praktikan), edukator IoT &amp; Master of Ceremonies (MC), serta operasional acara berskala besar.
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-1.5 pt-1">
+            <span class="tag-pill !text-[10.5px] !py-0.5 !px-2.5">HRD &amp; Design Thinking</span>
+            <span class="tag-pill !text-[10.5px] !py-0.5 !px-2.5">Master of Ceremonies (MC)</span>
+            <span class="tag-pill !text-[10.5px] !py-0.5 !px-2.5">IoT Educator &amp; Speaker</span>
+            <span class="tag-pill !text-[10.5px] !py-0.5 !px-2.5">Lab Teaching Assistant</span>
+            <span class="tag-pill !text-[10.5px] !py-0.5 !px-2.5">Google Workspace</span>
+            <span class="tag-pill !text-[10.5px] !py-0.5 !px-2.5">Microsoft Office</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- SLIDE 7: 05 / CREDENTIALS (#credentials) — Compact & Scannable        -->
+    <!-- ===================================================================== -->
+    <section id="credentials" class="space-y-5">
+      <div>
+        <div class="section-index">05 / CREDENTIALS</div>
+        <h2 class="text-2xl sm:text-[26px] font-extrabold tracking-tight mt-0.5" style="color: var(--ink);" data-i18n="sec_cred_title">
+          Sertifikasi Teknis, Penghargaan &amp; Mandat Akademik
+        </h2>
+        <p class="text-xs sm:text-[13px] mt-0.5 max-w-2xl" style="color: var(--secondary);" data-i18n="sec_cred_sub">
+          Kredensial sertifikasi AI &amp; rekayasa, capaian kompetisi inovasi dan robotika, serta mandat kepemimpinan riset dan laboratorium.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5">
+        <!-- Awards & Competitions -->
+        <div class="apple-card p-5 space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="tag-pill !text-[10px] !py-0.5 !px-2.5" data-i18n="cred_col1_tag">PENGHARGAAN &amp; KOMPETISI</span>
+            <span class="text-base">🏆</span>
+          </div>
+          <ul class="space-y-2.5 text-xs">
+            <li class="pb-2.5 border-b" style="border-color: var(--line);">
+              <div class="font-bold leading-snug" style="color: var(--ink);" data-i18n="award_1_title">Top 1 Tim SDGs Future Leaders Regional Jakarta–Tangerang (2026)</div>
+              <div class="text-[11px] mt-0.5 leading-snug" style="color: var(--secondary);" data-i18n="award_1_desc">Astra Honda SDGs Future Leaders (Proyek KARSA) — "Sistem Pengering Hibrida Cerdas Penyelamat Nilai Ekonomi Kopi Desa Talang Empat di Era Krisis Iklim".</div>
+            </li>
+            <li class="pb-2.5 border-b" style="border-color: var(--line);">
+              <div class="font-bold leading-snug" style="color: var(--ink);" data-i18n="award_2_title">Finalis Kompetisi Esai Ilmiah Nasional IFF (2026)</div>
+              <div class="text-[11px] mt-0.5 leading-snug" style="color: var(--secondary);" data-i18n="award_2_desc">Karya: "Eco-Anxiety ke Eco-Preneur: Mengubah Kecemasan Generasi Z Menjadi Kekuatan Ekonomi Hijau Menuju Indonesia Emas 2045".</div>
+            </li>
+            <li class="pb-2.5 border-b" style="border-color: var(--line);">
+              <div class="font-bold leading-snug" style="color: var(--ink);" data-i18n="award_3_title">Top 4 Kompetisi Robot Sumo FIK FAIR UPNVJ</div>
+              <div class="text-[11px] mt-0.5 leading-snug" style="color: var(--secondary);" data-i18n="award_3_desc">BEM FIK UPN "Veteran" Jakarta — Pengembangan perangkat keras &amp; sistem kendali Robot Sumo berbasis ESP.</div>
+            </li>
+            <li>
+              <div class="font-bold leading-snug" style="color: var(--ink);" data-i18n="award_4_title">Best of Staff Division — Bela Negara Festival Vol. 7</div>
+              <div class="text-[11px] mt-0.5 leading-snug" style="color: var(--secondary);" data-i18n="award_4_desc">Penghargaan staf terbaik Divisi General Support dalam operasional festival berskala ±9.000 pengunjung.</div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Certifications -->
+        <div class="apple-card p-5 space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="tag-pill !text-[10px] !py-0.5 !px-2.5" data-i18n="cred_col2_tag">SERTIFIKASI TEKNIS</span>
+            <span class="text-base">📜</span>
+          </div>
+          <ul class="space-y-2 text-xs">
+            <li class="pb-2 border-b" style="border-color: var(--line);">
+              <div class="font-bold leading-snug" style="color: var(--ink);">Google Student Ambassador — Class of 2026</div>
+              <div class="text-[11px] mt-0.5 leading-snug" style="color: var(--secondary);" data-i18n="cert_gsa_desc">No. GSA26/B1/GRAD/XXVI-01/GSAID261143 — Terpilih dari 81.000 mahasiswa nasional dalam kepemimpinan adopsi Google AI di lingkungan kampus.</div>
+            </li>
+            <li class="pb-2 border-b" style="border-color: var(--line);">
+              <div class="font-bold leading-snug" style="color: var(--ink);">AI for Work &amp; Career Readiness with Google AI Products</div>
+              <div class="text-[11px] mt-0.5 leading-snug" style="color: var(--secondary);" data-i18n="cert_1_desc">No. 01813/H8/CSR/MBA2/IV/2026 — Hacktiv8 Indonesia × AVPN &amp; Google.org (Maju Bareng AI, 10 Jam Pembelajaran, 28 Apr 2026).</div>
+            </li>
+            <li class="pb-2 border-b" style="border-color: var(--line);">
+              <div class="font-bold leading-snug" style="color: var(--ink);">IBM SkillsBuild — Generative AI &amp; IBM Granite Suite (3 Sertifikat)</div>
+              <div class="text-[11px] mt-0.5 leading-snug" style="color: var(--secondary);" data-i18n="cert_2_desc">Code Generation &amp; Optimization Using IBM Granite (MDL-566), IBM Granite Models for Software Development (MDL-567), dan Use Generative AI for Software Development (MDL-504).</div>
+            </li>
+            <li>
+              <div class="font-bold leading-snug" style="color: var(--ink);" data-i18n="cert_3_title">Sertifikat Asisten Praktikum Fakultas Teknik UPNVJ (3 Sertifikat)</div>
+              <div class="text-[11px] mt-0.5 leading-snug" style="color: var(--secondary);" data-i18n="cert_3_desc">Sistem Digital (645/UN61/SERTF/2026/FT), Fisika (626/UN61/SERTF/2026/FT), &amp; Pengukuran Besaran Listrik (SGAS/155.1/UN61/2025/FT).</div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Laboratory & Research Mandates -->
+        <div class="apple-card p-5 space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="tag-pill !text-[10px] !py-0.5 !px-2.5" data-i18n="cred_col3_tag">MANDAT RISET &amp; LABORATORIUM</span>
+            <span class="text-base">🏛️</span>
+          </div>
+          <ul class="space-y-2.5 text-xs">
+            <li class="pb-2.5 border-b" style="border-color: var(--line);">
+              <div class="font-bold leading-snug" style="color: var(--ink);" data-i18n="mandate_2_title">Intelligent Control System Research Team</div>
+              <div class="text-[11px] mt-0.5 leading-snug" style="color: var(--secondary);" data-i18n="mandate_2_desc">Tim riset sistem kendali cerdas (Sep 2026 – Sekarang) yang mengembangkan navigasi AGV Omni-Wheel berbasis Dynamic Programming, PJU Surya Logika Fuzzy, dan sistem otonom.</div>
+            </li>
+            <li class="pb-2.5 border-b" style="border-color: var(--line);">
+              <div class="font-bold leading-snug" style="color: var(--ink);" data-i18n="mandate_3_title">Asisten Laboratorium Teknik Elektro UPNVJ</div>
+              <div class="text-[11px] mt-0.5 leading-snug" style="color: var(--secondary);" data-i18n="mandate_3_desc">Membimbing praktikum Pengukuran Besaran Listrik, Fisika Dasar, dan Sistem Digital bagi lebih dari 100 mahasiswa Teknik Elektro (Agu 2025 – Sekarang).</div>
+            </li>
+            <li>
+              <div class="font-bold leading-snug" style="color: var(--ink);">Head of Department HRD — KSM IoT UPNVJ &amp; Google Student Ambassador</div>
+              <div class="text-[11px] mt-0.5 leading-snug" style="color: var(--secondary);" data-i18n="mandate_1_desc">Memimpin pengembangan SDM dan riset inovasi IoT di KSM IoT UPNVJ (Jan 2026 – Sekarang) serta menuntaskan mandat Google Student Ambassador (Apr – Jul 2026).</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- SLIDE 8: 06 / CONTACT (#contact) — Compact & Clean                    -->
+    <!-- ===================================================================== -->
+    <section id="contact" class="pt-8 pb-12 relative">
+      <div class="relative px-2 sm:px-8 py-12 sm:py-20 text-center">
+        <!-- Floating Tilted Specialty Pills (Desktop & Tablet) -->
+        <!-- Top-Left Pill -->
+        <div class="specialty-pill hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-full -rotate-6 absolute top-10 left-2 lg:left-8 select-none transition-transform duration-300 hover:rotate-0" >
+          <svg class="w-4 h-4 shrink-0" style="color: var(--blue);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h4l3-9 4 18 3-9h6"/></svg>
+          <span class="text-xs font-extrabold tracking-tight">Intelligent Control</span>
+        </div>
+
+        <!-- Bottom-Left Pill -->
+        <div class="specialty-pill hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-full rotate-3 absolute top-44 left-0 lg:left-4 select-none transition-transform duration-300 hover:rotate-0" >
+          <svg class="w-4 h-4 shrink-0" style="color: var(--blue);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="6" r="3"/><path d="M6 9v3a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V9"/><circle cx="12" cy="18" r="3"/><path d="M12 15v0"/></svg>
+          <span class="text-xs font-extrabold tracking-tight">Robotics &amp; PCB Design</span>
+        </div>
+
+        <!-- Top-Right Pill -->
+        <div class="specialty-pill hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-full rotate-6 absolute top-10 right-2 lg:right-8 select-none transition-transform duration-300 hover:rotate-0" >
+          <svg class="w-4 h-4 shrink-0" style="color: var(--blue);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"/></svg>
+          <span class="text-xs font-extrabold tracking-tight">IoT Systems</span>
+        </div>
+
+        <!-- Bottom-Right Pill -->
+        <div class="specialty-pill hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-full -rotate-3 absolute top-44 right-0 lg:right-4 select-none transition-transform duration-300 hover:rotate-0" >
+          <svg class="w-4 h-4 shrink-0" style="color: var(--blue);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/></svg>
+          <span class="text-xs font-extrabold tracking-tight">Public Speaking &amp; MC</span>
+        </div>
+
+        <!-- Mobile Specialty Pills Row -->
+        <div class="flex md:hidden flex-wrap justify-center gap-2 mb-6">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border text-[11px] font-bold -rotate-2" >
+            <span style="color: var(--blue);">⚡</span> Intelligent Control
+          </span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border text-[11px] font-bold rotate-2" >
+            <span style="color: var(--blue);">🔌</span> IoT Systems
+          </span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border text-[11px] font-bold -rotate-1" >
+            <span style="color: var(--blue);">🤖</span> Robotics &amp; PCB
+          </span>
+        </div>
+
+        <!-- Main Center Content -->
+        <div class="max-w-2xl mx-auto space-y-3 relative z-10">
+          <h2 class="text-4xl sm:text-6xl font-extrabold tracking-tight leading-none">
+            <span style="color: var(--ink);" data-i18n="contact_got">Got </span><span style="color: var(--blue);" data-i18n="contact_idea">An Idea?</span>
+          </h2>
+          <p class="text-lg sm:text-2xl font-bold pt-1" style="color: var(--secondary);" data-i18n="sec_contact_title">
+            Let's Connect &amp; Collaborate!
+          </p>
+
+          <p class="text-xs sm:text-[15px] leading-relaxed max-w-xl mx-auto pt-3" style="color: var(--secondary);" data-i18n="sec_contact_sub">
+            Thank you for visiting! I am always looking for new opportunities to apply my skills to innovative projects.
+          </p>
+          <p class="text-xs sm:text-sm font-semibold pt-1" style="color: var(--ink);" data-i18n="contact_discuss">
+            Let's discuss how we can work together.
+          </p>
+
+          <!-- Action Pill Buttons Row (Email Dropdown, LinkedIn, Instagram) -->
+          <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-4 pt-4 relative">
+            <!-- Email Button with Interactive Dropdown -->
+            <div class="relative">
+              <button id="contact-email-dropdown-btn" type="button" class="inline-flex items-center gap-2.5 px-6 py-3 rounded-2xl border text-xs sm:text-sm font-bold shadow-sm transition hover:shadow-md" style="background: var(--paper); border-color: var(--line); color: var(--ink);">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                <span>Email</span>
+                <svg id="contact-email-chevron" class="w-3.5 h-3.5 transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+
+              <!-- Dropdown Menu -->
+              <div id="contact-email-menu" class="hidden absolute left-1/2 -translate-x-1/2 mt-2 w-64 rounded-2xl border p-2 shadow-xl z-30 text-left space-y-1" style="background: var(--paper); border-color: var(--line);">
+                <a href="mailto:muhamad.nabhan.n4azmi@gmail.com" class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-xs font-semibold hover:bg-blue-500/10 transition" style="color: var(--ink);">
+                  <span>✉️</span>
+                  <div class="truncate">
+                    <div data-i18n="email_menu_send">Kirim Email Langsung</div>
+                    <div class="text-[10px] font-mono truncate" style="color: var(--muted);">muhamad.nabhan.n4azmi@gmail.com</div>
+                  </div>
+                </a>
+                <button id="copy-email-contact-btn" type="button" class="w-full flex items-center gap-2.5 px-3 py-2 rounded-xl text-xs font-semibold hover:bg-blue-500/10 transition text-left" style="color: var(--ink);">
+                  <span>📋</span>
+                  <span data-i18n="btn_copy_email">Salin Alamat Email</span>
+                </button>
+                <button id="toggle-quick-form-btn" type="button" class="w-full flex items-center gap-2.5 px-3 py-2 rounded-xl text-xs font-semibold hover:bg-blue-500/10 transition text-left" style="color: var(--blue);">
+                  <span>✍️</span>
+                  <span data-i18n="email_menu_form">Tulis Pesan Cepat di Sini</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- LinkedIn Button -->
+            <a href="https://www.linkedin.com/in/muhamad-nabhan-azmi-78b369320" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2.5 px-6 py-3 rounded-2xl border text-xs sm:text-sm font-bold shadow-sm transition hover:shadow-md" style="background: var(--paper); border-color: var(--line); color: var(--ink);">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+              <span>LinkedIn</span>
+            </a>
+
+            <!-- Instagram Button -->
+            <a href="https://www.instagram.com/nabhanzm/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2.5 px-6 py-3 rounded-2xl border text-xs sm:text-sm font-bold shadow-sm transition hover:shadow-md" style="background: var(--paper); border-color: var(--line); color: var(--ink);">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              <span>Instagram</span>
+            </a>
+          </div>
+
+          <!-- Collapsible Quick Message Form (opens when user clicks "Tulis Pesan Cepat" in Email menu) -->
+          <div id="quick-contact-drawer" class="hidden pt-4 max-w-md mx-auto text-left">
+            <form id="quick-contact-form" class="p-4 sm:p-5 rounded-2xl border space-y-2.5 shadow-lg" style="background: var(--paper); border-color: var(--line);">
+              <div class="flex items-center justify-between">
+                <div class="text-xs font-bold" style="color: var(--ink);" data-i18n="form_title">Kirim Pesan Cepat</div>
+                <button id="close-quick-form-btn" type="button" class="text-xs font-bold px-2 py-0.5 rounded-lg hover:bg-slate-200/50" style="color: var(--muted);">✕</button>
+              </div>
+              <div>
+                <label for="sender-name" class="block text-[11px] font-semibold mb-1" style="color: var(--secondary);" data-i18n="form_name_label">Nama / Instansi</label>
+                <input id="sender-name" type="text" required placeholder="Contoh: Rekan Proyek / Tim Rekrutmen" class="w-full px-3 py-1.5 rounded-xl border text-xs focus:outline-none focus:border-[#0068d9]" style="background: var(--canvas); border-color: var(--line); color: var(--ink);" />
+              </div>
+              <div>
+                <label for="sender-topic" class="block text-[11px] font-semibold mb-1" style="color: var(--secondary);" data-i18n="form_topic_label">Topik Kolaborasi</label>
+                <select id="sender-topic" class="w-full px-3 py-1.5 rounded-xl border text-xs focus:outline-none focus:border-[#0068d9]" style="background: var(--canvas); border-color: var(--line); color: var(--ink);">
+                  <option value="Kolaborasi Proyek IoT / Intelligent Control / Robotika">Kolaborasi Proyek IoT / Intelligent Control / Robotika</option>
+                  <option value="Peluang Magang / Profesional (Engineering)">Peluang Magang / Profesional (Engineering)</option>
+                  <option value="Undangan Pembicara IoT / Master of Ceremony (MC)">Undangan Pembicara IoT / Master of Ceremony (MC)</option>
+                  <option value="Diskusi Riset / Akademik">Diskusi Riset / Akademik</option>
+                </select>
+              </div>
+              <div>
+                <label for="sender-msg" class="block text-[11px] font-semibold mb-1" style="color: var(--secondary);" data-i18n="form_msg_label">Pesan Singkat</label>
+                <textarea id="sender-msg" rows="2" required placeholder="Tulis pesan singkat Anda di sini..." class="w-full px-3 py-1.5 rounded-xl border text-xs focus:outline-none focus:border-[#0068d9]" style="background: var(--canvas); border-color: var(--line); color: var(--ink);"></textarea>
+              </div>
+              <button type="submit" class="pill-btn-primary w-full justify-center !py-2 !text-xs" data-i18n="form_submit_btn">
+                Buka Draft Email &amp; Salin Pesan ↗
+              </button>
+            </form>
+          </div>
+
+          <!-- Warm Regards Signature Block -->
+          <div class="pt-10 sm:pt-12 space-y-1">
+            <div class="text-base sm:text-lg italic" style="font-family: Georgia, 'Times New Roman', serif; color: var(--secondary);" data-i18n="contact_regards">
+              Warm regards,
+            </div>
+            <div class="text-2xl sm:text-4xl font-bold tracking-tight" style="font-family: Georgia, 'Times New Roman', serif; color: var(--ink);">
+              Muhamad Nabhan Azmi
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t py-5" style="border-color: var(--line); background: var(--paper);">
+    <div class="w-full max-w-[1440px] 2xl:max-w-[1600px] mx-auto px-4 sm:px-8 lg:px-12 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px]" style="color: var(--muted);">
+      <div>
+        © 2026 <strong>Muhamad Nabhan Azmi</strong> · S-1 Teknik Elektro UPN "Veteran" Jakarta.
+      </div>
+      <div class="flex items-center gap-4">
+        <span data-i18n="footer_note">Nabhan's Portofolio — IoT, Robotics &amp; Intelligent Control System</span>
+        <a href="#top" class="font-bold hover:text-[#0068d9]" data-i18n="footer_top">Kembali ke atas ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- PROJECT DETAIL MODAL -->
+  <div id="project-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-project-title">
+    <div class="apple-card max-w-2xl w-full max-h-[88vh] overflow-y-auto p-6 sm:p-8 space-y-5 shadow-2xl">
+      <div class="flex items-start justify-between gap-4">
+        <div>
+          <span id="modal-project-badge" class="tag-pill">IoT &amp; Intelligent Control</span>
+          <h3 id="modal-project-title" class="text-2xl font-extrabold mt-2" style="color: var(--ink);">Judul Proyek</h3>
+          <p id="modal-project-role" class="text-xs font-semibold mt-0.5" style="color: var(--muted);">Peran &amp; Tahun</p>
+        </div>
+        <button id="close-project-modal-btn" type="button" class="pill-btn-secondary !p-2 !text-sm" aria-label="Tutup modal">✕</button>
+      </div>
+
+      <img id="modal-project-img" src="assets/opt_karsa_dashboard.jpg" alt="Project preview" class="w-full max-h-72 object-contain rounded-2xl border p-1" style="border-color: var(--line); background: var(--canvas);" />
+
+      <div class="space-y-3 text-sm leading-relaxed" style="color: var(--secondary);">
+        <p id="modal-project-desc"></p>
+        <div class="p-4 rounded-2xl border space-y-2" style="background: var(--canvas); border-color: var(--line);">
+          <div class="text-xs font-extrabold uppercase tracking-wider" style="color: var(--blue);" data-i18n="modal_highlights_title">Detail Implementasi &amp; Capaian</div>
+          <ul id="modal-project-highlights" class="list-disc pl-5 space-y-1 text-xs sm:text-sm" style="color: var(--ink);"></ul>
+        </div>
+      </div>
+
+      <div id="modal-project-tags" class="flex flex-wrap gap-2"></div>
+
+      <div class="flex flex-wrap items-center justify-between gap-2 pt-2 border-t" style="border-color: var(--line);">
+        <a id="modal-drive-link" href="#" target="_blank" rel="noopener noreferrer" class="pill-btn-secondary !py-2 !px-4 !text-xs hidden">
+          <span id="modal-drive-link-label">Buka Dokumen Asli di Google Drive ↗</span>
+        </a>
+        <button id="close-project-modal-bottom-btn" type="button" class="pill-btn-primary !py-2 !px-5 !text-xs ml-auto" data-i18n="btn_close">Tutup</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- INTERACTIVE CV VIEWER & PRINT MODAL -->
+  <div id="cv-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-2 sm:p-5 modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="cv-modal-heading">
+    <div class="apple-card max-w-5xl w-full max-h-[94vh] flex flex-col overflow-hidden shadow-2xl">
+      <div class="px-5 py-3.5 border-b flex flex-col gap-3" style="border-color: var(--line); background: var(--canvas);">
+        <div class="flex items-center justify-between gap-3">
+          <div class="flex items-center gap-2 flex-wrap">
+            <span class="text-sm sm:text-base font-extrabold" id="cv-modal-heading" style="color: var(--ink);">Curriculum Vitae — Muhamad Nabhan Azmi</span>
+            <div class="flex items-center gap-1 ml-1">
+              <button type="button" class="cv-version-btn filter-tab active !py-1 !px-3 !text-xs" data-cv-lang="id">Pratinjau ID</button>
+              <button type="button" class="cv-version-btn filter-tab !py-1 !px-3 !text-xs" data-cv-lang="en">Preview ENG</button>
+            </div>
+          </div>
+          <button id="close-cv-modal-btn" type="button" class="pill-btn-secondary !p-1.5 !px-3 !text-xs shrink-0" aria-label="Tutup CV">✕</button>
+        </div>
+
+        <!-- 3 Pilihan Dokumen CV di Dalam Modal -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 pt-0.5">
+          <a id="cv-modal-pdf-id-btn" href="https://drive.google.com/file/d/1beBwSeoA3v-gV8WU8jJQlkUxm2mLl0jZ/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="pill-btn-secondary !w-full justify-center !py-2 !px-3 !text-xs">
+            <span>📄 1. CV Indonesia (Google Drive) ↗</span>
+          </a>
+          <a id="cv-modal-pdf-en-btn" href="https://drive.google.com/file/d/1Gec4hqxWmHrlxX6Kldy2pFNB_U3vOkll/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="pill-btn-secondary !w-full justify-center !py-2 !px-3 !text-xs">
+            <span>🌐 2. CV English (Google Drive) ↗</span>
+          </a>
+          <button id="print-cv-btn" type="button" class="pill-btn-primary !w-full justify-center !py-2 !px-3 !text-xs">
+            <span>🖨️</span>
+            <span data-i18n="btn_print_cv">3. Cetak / Simpan PDF</span>
+          </button>
+        </div>
+      </div>
+
+      <div id="cv-printable-area" class="p-6 sm:p-10 overflow-y-auto space-y-6 text-sm" style="background: var(--paper); color: var(--ink);"></div>
+    </div>
+  </div>
+
+    <!-- Global Floating Back-to-Top Button -->
+  <button id="global-back-to-top" type="button" aria-label="Kembali ke atas" title="Kembali ke atas" class="fixed bottom-6 right-6 z-40 w-11 h-11 sm:w-12 sm:h-12 rounded-full flex items-center justify-center shadow-[0_8px_24px_rgba(15,23,42,0.22)] transition-all duration-300 hover:scale-110 opacity-0 translate-y-4 pointer-events-none" style="background: var(--ink); color: var(--paper);">
+    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+  </button>
+
+  <!-- Toast Notification -->
+  <div id="toast-banner" class="fixed bottom-5 right-5 z-50 hidden items-center gap-2.5 px-4 py-3 rounded-2xl shadow-xl border text-xs font-semibold transition-all" style="background: var(--ink); color: var(--paper); border-color: var(--line);">
+    <span>✅</span>
+    <span id="toast-text">Tersalin ke clipboard!</span>
+  </div>
+
+  <!-- Application Logic -->
+  <script src="portfolio.js"></script>
+</body>
+</html>

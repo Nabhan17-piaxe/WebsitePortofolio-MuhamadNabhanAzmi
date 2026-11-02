@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Proteus",
+    "icon": "assets/icon_proteus.png"
+  },
+  {
+    "name": "Fusion 360",
+    "icon": "assets/icon_fusion360.png"
+  },
+  {
+    "name": "EasyEDA",
+    "icon": "assets/icon_easyeda.png"
+  },
+  {
+    "name": "Arduino",
+    "icon": "https://img.icons8.com/color/96/000000/arduino.png"
+  },
+  {
+    "name": "C / C++",
+    "icon": "https://img.icons8.com/color/96/000000/c-plus-plus-logo.png"
+  },
+  {
+    "name": "Python",
+    "icon": "https://img.icons8.com/color/96/000000/python.png"
+  },
+  {
+    "name": "IoT",
+    "icon": "https://img.icons8.com/fluency/96/000000/internet-of-things.png"
+  },
+  {
+    "name": "Ultimaker Cura",
+    "icon": "https://img.icons8.com/color/96/000000/3d-printer.png"
+  },
+  {
+    "name": "Google Workspace",
+    "icon": "https://img.icons8.com/color/96/000000/google-logo.png"
+  },
+  {
+    "name": "Microsoft Office",
+    "icon": "https://img.icons8.com/color/96/000000/microsoft.png"
+  }
+]
